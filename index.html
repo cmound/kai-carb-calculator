@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kai Carb Calculator</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Kai Carb Calculator</h1>
+    <p>Enter label values per serving, then how much Kai eats, plus BSL, IOB, and food type.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Food label per serving</h2>
+      <label>Serving size (g or mL)
+        <input id="servingSize" type="number" step="0.01" value="100">
+      </label>
+      <label>Carbs per serving (g)
+        <input id="labelCarbs" type="number" step="0.1" value="30">
+      </label>
+      <label>Fat per serving (g)
+        <input id="labelFat" type="number" step="0.1" value="10">
+      </label>
+      <label>Protein per serving (g)
+        <input id="labelProtein" type="number" step="0.1" value="5">
+      </label>
+    </section>
+
+    <section class="card">
+      <h2>Kai's portion</h2>
+      <label>Amount eaten (same unit as serving size)
+        <input id="amountEaten" type="number" step="0.01" value="100">
+      </label>
+    </section>
+
+    <section class="card">
+      <h2>Context</h2>
+      <label>BSL (mg/dL)
+        <input id="bsl" type="number" step="1" value="120">
+      </label>
+      <label>Insulin on board (u)
+        <input id="iob" type="number" step="0.1" value="0.0">
+      </label>
+      <label>Food type
+        <select id="foodType">
+          <option>Simple Carbs</option>
+          <option>Carbs with Fiber</option>
+          <option>Protein</option>
+          <option>Plant-based Fat</option>
+          <option>Low-carb Veggies</option>
+        </select>
+      </label>
+      <button id="calcBtn">Calculate</button>
+      <button id="saveBtn" class="secondary">Save to Recents</button>
+    </section>
+
+    <section class="card">
+      <h2>Results</h2>
+      <div id="results">
+        <p>Portion carbs: <strong id="portionCarbs">0</strong> g</p>
+        <p>Portion fat: <strong id="portionFat">0</strong> g</p>
+        <p>Portion protein: <strong id="portionProtein">0</strong> g</p>
+        <hr>
+        <p>Pre-bolus: <strong id="prebolus">n/a</strong></p>
+        <p>Split: <strong id="splitText">n/a</strong></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Recent foods</h2>
+      <ul id="recentList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Works offline after first load. Add to Home Screen on iPhone.</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js');
+      });
+    }
+  </script>
+</body>
+</html>
