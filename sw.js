@@ -1,5 +1,5 @@
 // sw.js
-const CACHE = "kai-pwa-v5";   // bump this
+const CACHE = "kai-pwa-v6";   // bump this
 const ASSETS = [
   "./",
   "./index.html",
