@@ -1,12 +1,10 @@
 {
   "name": "Type 1 Diabetes Calculator",
   "short_name": "T1D Calc",
-  "description": "A Type 1 Diabetes food and bolus helper that calculates carbs, fat, protein and guidance from nutrition labels.",
   "start_url": "./",
-  "scope": "./",
   "display": "standalone",
-  "background_color": "#07c6ee",
-  "theme_color": "#07c6ee",
+  "background_color": "#f5f7fb",
+  "theme_color": "#007f7f",
   "icons": [
     {
       "src": "icons/icon-192.png",
