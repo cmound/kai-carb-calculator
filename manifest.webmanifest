@@ -1,10 +1,10 @@
 {
   "name": "Type 1 Diabetes Calculator",
   "short_name": "T1D Calc",
-  "start_url": "./",
+  "start_url": "/type-1-diabetes-calculator/",
   "display": "standalone",
-  "background_color": "#f5f7fb",
-  "theme_color": "#007f7f",
+  "background_color": "#ffffff",
+  "theme_color": "#00796b",
   "icons": [
     {
       "src": "icons/icon-192.png",
